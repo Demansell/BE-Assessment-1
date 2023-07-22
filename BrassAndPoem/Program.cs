@@ -113,7 +113,7 @@ void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
        var query = from pt in productTypes
                     where products[i].ProductTypeId == pt.ID
                     select new { pt.Title };
-        var ProductType = productTypes.Where(x => x.ID == products[i].ProductTypeId).FirstOrDefault();
+        // var ProductType = productTypes.Where(x => x.ID == products[i].ProductTypeId).FirstOrDefault();
         var productType = query.FirstOrDefault();
        
         Console.WriteLine($"{i + 1} . {products[i].Name} that cost {products[i].Price} that is a type {productType.Title}");
